@@ -1,0 +1,35 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+use yii\helpers\ArrayHelper;
+use app\models\TypeLeave;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\LeaveApplication */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="leave-application-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'EmpID')->textInput(['maxlength' => true]) ?>
+
+
+    <?= $form->field($model, "type_leave")->dropDownList(ArrayHelper::map(TypeLeave::find()->where(['type'=>1])->all(), 'id', 'description'),['prompt'=>'Select Leave', 'class'=>'form-control'
+                ]) ?>
+
+    <?= $form->field($model, 'date_from')->textInput() ?>
+
+    <?= $form->field($model, 'date_to')->textInput() ?>
+
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>
