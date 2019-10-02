@@ -27,7 +27,9 @@ use kartik\datetime\DateTimePicker;
         echo $form->field($model, 'date_from')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Date and Time'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'pickerPosition' => 'top-right',
+            
         ]
     ]);
     ?>
@@ -36,7 +38,9 @@ use kartik\datetime\DateTimePicker;
         echo $form->field($model, 'date_to')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Date and Time'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'pickerPosition' => 'top-right',
+    
         ]
     ]);
     ?>

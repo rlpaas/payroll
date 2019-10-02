@@ -67,4 +67,10 @@ class LeaveApplication extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
+
+    public function afterFind() {
+        parent::afterFind ();
+        $this->date_from=Yii::$app->formatter->asDateTime($this->date_from);
+        $this->date_to=Yii::$app->formatter->asDateTime($this->date_to);
+    }
 }
